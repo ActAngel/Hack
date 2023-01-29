@@ -32,6 +32,28 @@ const hacks = [
 
   $('#terminal').terminal(function(input) {
     // handle user input here
+    $('#terminal').terminal(function(input) {
+      for (let i = 0; i < commands.length; i++) {
+        if (input === commands[i].name) {
+          commands[i].execute();
+          return;
+        }
+      }
+      // code to handle unknown command
+    });
+    
+    exec("ls", (error, stdout, stderr) => {
+      if (error) {
+        this.echo(`error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        this.echo(`stderr: ${stderr}`);
+        return;
+      }
+      this.echo(`stdout: ${stdout}`);
+    });
+    
   });
   
   

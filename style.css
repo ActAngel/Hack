@@ -8,3 +8,6 @@ body {
     padding: 20px;
   }
   
+  textarea:focus, input:focus{
+    outline: none;
+}

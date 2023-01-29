@@ -7,8 +7,11 @@ const hacks = [
   
   // function to display command prompt
   function displayPrompt() {
-    let input = prompt("Enter a command:");
-    handleInput(input);
+    let hackInput = document.getElementById("input").value
+    if(hackInput == "Hack"){
+      let input = prompt("Enter a command:");
+      handleInput(input);
+    }
   }
   
   // function to handle player's input
@@ -26,6 +29,11 @@ const hacks = [
     // if no match is found, display error message
     document.getElementById("output").innerHTML += "Invalid command.<br>";
   }
+
+  $('#terminal').terminal(function(input) {
+    // handle user input here
+  });
   
-  displayPrompt();
+  
+  
   

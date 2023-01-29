@@ -1,0 +1,10 @@
+body {
+    background-color: #000000;
+    color: #00ff00;
+    font-family: monospace;
+  }
+  
+  #output {
+    padding: 20px;
+  }
+  

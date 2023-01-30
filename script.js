@@ -7,12 +7,10 @@ const hacks = [
   
   // function to display command prompt
   function displayPrompt() {
-    let hackInput = document.getElementById("input").value
-    if(hackInput == "Hack"){
-      let input = prompt("Enter a command:");
-      handleInput(input);
+    let input = prompt("Enter a command:");
+    handleInput(input);
     }
-  }
+
   
   // function to handle player's input
   function handleInput(input) {
@@ -29,6 +27,37 @@ const hacks = [
     // if no match is found, display error message
     document.getElementById("output").innerHTML += "Invalid command.<br>";
   }
+  
+  document.getElementById("start-button").addEventListener("click", function() {
+    startGame();
+  });
+  
+  document.getElementById("start-button").addEventListener("click", function() {
+    document.getElementById("menu").style.display = "block";
+  });
+
+  const { exec } = require("child_process");
+
+const commands = [
+  { name: "ls", description: "List directory contents", execute: function() {
+    exec("ls", (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+    });
+  } },
+  // add more commands here
+];
+
+
+
+
   
   
   

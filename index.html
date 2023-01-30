@@ -1,38 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hacking Game</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Hacking Simulator</title>
 </head>
 <body>
-  <div id="output"></div>
-  <script type="text/javascript" src="script.js"></script>
+  <h1>Hacking Simulator</h1>
+  <p>Välj ett mål att hacka:</p>
+  <select id="targets">
+    <option value="target1">Mål 1</option>
+    <option value="target2">Mål 2</option>
+    <option value="target3">Mål 3</option>
+  </select>
+  <br><br>
+  <button onclick="startHack()">Starta hack</button>
+  <p id="result"></p>
 </body>
 </html>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="jquery.terminal.min.js"></script>
-
-<div id="terminal"></div>
-<div id="start-button">Start</div>
-
-<div id="menu">
-  <h1>Menu</h1>
-  <ul>
-    <li>Start Game</li>
-    <li>Options</li>
-    <li>Quit</li>
-  </ul>
-</div>
-
-<div id="menu">
-  <h1>Menu</h1>
-  <ul>
-    <li>Start Game</li>
-    <li>Options</li>
-    <li>Quit</li>
-  </ul>
-  <div id="hide-menu">X</div>
-</div>
-
-
